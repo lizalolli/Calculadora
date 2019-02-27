@@ -1,0 +1,73 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="css/main.css">
+    </head>
+    <body>
+    
+    <div class="container">
+      <!-- Example row of columns -->
+      <div class="col-md-4 col-md-offset-4 col-sm-12">
+        <div class="calculadora col-md-12 col-sm-12">
+          <form>
+            <div class="form-group">
+              <label for="valor-total">Valor total tatuaje</label>
+              <input type="number" class="form-control" id="valor-total" placeholder="" >
+              <small class="form-text text-muted">Sin puntos ni comas.</small>
+            </div>  
+            <div class="form-group">
+              <label for="valor-total">Cantidad de sesiones</label>
+              <select class="form-control" id="sesiones">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+              </select>
+            </div>
+            <a class="btn mb-2 calcular">Calcular</a>   
+          </form>
+        <!--</div>-->
+        <!--<div class="resultado col-md-4">-->
+        <hr>
+
+        <ul class="text-left resultado">
+          <li class="valorfinal"><b>VALOR TOTAL:</b> <span></span></li>
+          <li class="abono">Abono: <span></span></li>
+          <li class="sesion">Sesión: <span></span></li>
+        </ul>
+        
+        </div>
+
+      </div>
+    </div> 
+
+    <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
+    <script src="js/vendor/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
+    </body>
+    <script>
+
+      $('.calcular').on('click',function(){
+        var valorTotal = $('#valor-total').val();
+        var sesiones = $('#sesiones').val();
+        var valorAbono = valorTotal*0.2
+        var valorSesion = (valorTotal*0.8)/sesiones
+        var valorfinal = valorTotal
+        $('.abono span').text(valorAbono)
+        $('.sesion span').text(valorSesion)
+        $('.valorfinal span').text(valorTotal)
+      })
+
+    </script>
+</html>
